@@ -15,7 +15,7 @@ Choosing no will create a file called .dosaliases and add it to .bashrc
 
 ## Uninstallation
 ### To remove the new aliases if you have chosen yes during the installation: 
-`nano ~/.bashrc` \
+`nano ~/.bash_aliases` \
 then remove the following lines:
 ```
 alias cls='clear' 
