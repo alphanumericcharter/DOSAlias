@@ -32,7 +32,7 @@ else
         #make .dosaliases run from .bashrc if it exists
         echo "if [ -f ~/.dosaliases ]; then
             . ~/.dosaliases
-        fi" >> ~./.bashrc
+        fi" >> ~/.bashrc
         echo "added .dosaliases to .bashrc"
         echo "done"
 fi
