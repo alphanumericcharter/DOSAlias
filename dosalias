@@ -1,0 +1,42 @@
+echo "Does a .bash_aliases file exist and would you like to add the new aliases to it? [y,N]"
+read input
+if [[ $input == "Y" || $input == "y" ]]; then
+
+        #make backup of .bash_aliases
+        cp ~/.bash_aliases ~/.bash_aliases.backup
+        echo "created .bash_aliases.backup"
+        echo "alias cls='clear'" >> ~/.bash_aliases
+        echo "alias cd..='cd ..'" >> ~/.bash_aliases
+        echo "alias copy='cp'" >> ~/.bash_aliases
+        echo "alias ver='uname -a'" >> ~/.bash_aliases
+        echo "alias help='man'" >> ~/.bash_aliases
+        echo "added aliases to .bash_aliases"
+        echo "done"
+else
+        #make backup of .bashrc
+        cp ~/.bashrc ~/.bashrc.backup
+        echo "Created .bashrc.backup"
+
+        #create .dosaliases file and add aliases
+        touch ~/.dosaliases
+        echo "alias cls='clear'" >> ~/.dosaliases
+        echo "alias cd..='cd ..'" >> ~/.dosaliases
+        echo "alias copy='cp'" >> ~/.dosaliases
+        echo "alias ver='uname -a'" >> ~/.dosaliases
+        echo "alias help='man'" >> ~/.dosaliases
+        echo "added aliases to file .dosaliases"
+
+        #make .dosaliases executable
+        chmod +x ~/.dosaliases
+
+        #make .dosaliases run from .bashrc if it exists
+        echo "if [ -f ~/.dosaliases ]; then
+            . ~/.dosaliases
+        fi" >> ~./.bashrc
+        echo "added .dosaliases to .bashrc"
+        echo "done"
+fi
+
+
+
+
