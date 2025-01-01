@@ -25,7 +25,7 @@ alias ver='uname -a'
 alias help='man'
 ``` 
 ### To remove the new aliases if you have chosen no during the installation:
-`rm ~/.dosaliases` 
+`rm ~/.dosaliases` \
 `nano ~/.bashrc` 
 \
 then remove: 
